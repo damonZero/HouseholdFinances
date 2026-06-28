@@ -44,7 +44,7 @@ fun InsuranceScreen(
                                 showFilterMenu = false
                             }
                         )
-                        InsuranceType.values().forEach { type ->
+                        InsuranceType.entries.forEach { type ->
                             DropdownMenuItem(
                                 text = { Text(getInsuranceTypeName(type)) },
                                 onClick = {
@@ -300,7 +300,7 @@ fun AddInsuranceDialog(
                         expanded = showTypeMenu,
                         onDismissRequest = { showTypeMenu = false }
                     ) {
-                        InsuranceType.values().forEach { insuranceType ->
+                        InsuranceType.entries.forEach { insuranceType ->
                             DropdownMenuItem(
                                 text = { Text(getInsuranceTypeName(insuranceType)) },
                                 onClick = {

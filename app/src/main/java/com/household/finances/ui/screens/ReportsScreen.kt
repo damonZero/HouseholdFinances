@@ -130,7 +130,7 @@ fun AssetBreakdownCard(
                 .padding(16.dp)
                 .fillMaxWidth()
         ) {
-            AssetType.values().forEach { type ->
+            AssetType.entries.forEach { type ->
                 val amount = assetBreakdown[type] ?: 0.0
                 val percentage = if (totalAssets > 0) {
                     (amount / totalAssets * 100).toInt()
@@ -208,7 +208,7 @@ fun LiabilityBreakdownCard(
                 .padding(16.dp)
                 .fillMaxWidth()
         ) {
-            LiabilityType.values().forEach { type ->
+            LiabilityType.entries.forEach { type ->
                 val amount = liabilityBreakdown[type] ?: 0.0
                 val percentage = if (totalLiabilities > 0) {
                     (amount / totalLiabilities * 100).toInt()
@@ -269,7 +269,6 @@ fun LiabilityBreakdownCard(
     }
 }
 
-@Composable
 fun getAssetTypeColor(type: AssetType): androidx.compose.ui.graphics.Color {
     return when (type) {
         AssetType.REAL_ESTATE -> AssetRealEstate
@@ -280,7 +279,6 @@ fun getAssetTypeColor(type: AssetType): androidx.compose.ui.graphics.Color {
     }
 }
 
-@Composable
 fun getLiabilityTypeColor(type: LiabilityType): androidx.compose.ui.graphics.Color {
     return when (type) {
         LiabilityType.MORTGAGE -> LiabilityMortgage

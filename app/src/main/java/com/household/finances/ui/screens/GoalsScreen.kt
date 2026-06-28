@@ -47,7 +47,7 @@ fun GoalsScreen(
                                 showFilterMenu = false
                             }
                         )
-                        GoalType.values().forEach { type ->
+                        GoalType.entries.forEach { type ->
                             DropdownMenuItem(
                                 text = { Text(getGoalTypeName(type)) },
                                 onClick = {
@@ -276,7 +276,7 @@ fun AddGoalDialog(
                         expanded = showTypeMenu,
                         onDismissRequest = { showTypeMenu = false }
                     ) {
-                        GoalType.values().forEach { goalType ->
+                        GoalType.entries.forEach { goalType ->
                             DropdownMenuItem(
                                 text = { Text(getGoalTypeName(goalType)) },
                                 onClick = {

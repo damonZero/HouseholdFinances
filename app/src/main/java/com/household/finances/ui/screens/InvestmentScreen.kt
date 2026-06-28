@@ -44,7 +44,7 @@ fun InvestmentScreen(
                                 showFilterMenu = false
                             }
                         )
-                        InvestmentType.values().forEach { type ->
+                        InvestmentType.entries.forEach { type ->
                             DropdownMenuItem(
                                 text = { Text(getInvestmentTypeName(type)) },
                                 onClick = {
@@ -290,7 +290,7 @@ fun AddInvestmentDialog(
                         expanded = showTypeMenu,
                         onDismissRequest = { showTypeMenu = false }
                     ) {
-                        InvestmentType.values().forEach { investmentType ->
+                        InvestmentType.entries.forEach { investmentType ->
                             DropdownMenuItem(
                                 text = { Text(getInvestmentTypeName(investmentType)) },
                                 onClick = {

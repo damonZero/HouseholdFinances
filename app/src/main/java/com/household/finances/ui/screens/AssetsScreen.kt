@@ -47,7 +47,7 @@ fun AssetsScreen(
                                 showFilterMenu = false
                             }
                         )
-                        AssetType.values().forEach { type ->
+                        AssetType.entries.forEach { type ->
                             DropdownMenuItem(
                                 text = { Text(getAssetTypeName(type)) },
                                 onClick = {

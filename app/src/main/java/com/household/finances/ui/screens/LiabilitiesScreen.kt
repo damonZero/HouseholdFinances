@@ -46,7 +46,7 @@ fun LiabilitiesScreen(
                                 showFilterMenu = false
                             }
                         )
-                        LiabilityType.values().forEach { type ->
+                        LiabilityType.entries.forEach { type ->
                             DropdownMenuItem(
                                 text = { Text(getLiabilityTypeName(type)) },
                                 onClick = {

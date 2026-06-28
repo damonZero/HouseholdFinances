@@ -74,7 +74,7 @@ fun AddAssetScreen(
                     expanded = showTypeMenu,
                     onDismissRequest = { showTypeMenu = false }
                 ) {
-                    AssetType.values().forEach { assetType ->
+                    AssetType.entries.forEach { assetType ->
                         DropdownMenuItem(
                             text = { Text(getAssetTypeName(assetType)) },
                             onClick = {

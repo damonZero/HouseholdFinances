@@ -21,7 +21,9 @@ fun NavGraph(
     ) {
         // Bottom Nav Screens
         composable(Screen.Home.route) {
-            HomeScreen()
+            HomeScreen(
+                onNavigate = { route -> navController.navigate(route) }
+            )
         }
 
         composable(Screen.Assets.route) {

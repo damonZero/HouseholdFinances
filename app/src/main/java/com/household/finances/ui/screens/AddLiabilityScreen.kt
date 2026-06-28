@@ -75,7 +75,7 @@ fun AddLiabilityScreen(
                     expanded = showTypeMenu,
                     onDismissRequest = { showTypeMenu = false }
                 ) {
-                    LiabilityType.values().forEach { liabilityType ->
+                    LiabilityType.entries.forEach { liabilityType ->
                         DropdownMenuItem(
                             text = { Text(getLiabilityTypeName(liabilityType)) },
                             onClick = {

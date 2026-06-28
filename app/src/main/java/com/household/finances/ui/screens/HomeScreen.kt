@@ -17,11 +17,13 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.household.finances.data.model.AssetType
 import com.household.finances.ui.components.*
 import com.household.finances.ui.theme.*
+import com.household.finances.ui.navigation.Screen
 import com.household.finances.ui.viewmodel.HomeViewModel
 
 @Composable
 fun HomeScreen(
-    viewModel: HomeViewModel = hiltViewModel()
+    viewModel: HomeViewModel = hiltViewModel(),
+    onNavigate: (String) -> Unit = {}
 ) {
     val uiState by viewModel.uiState.collectAsState()
 
@@ -128,7 +130,7 @@ fun HomeScreen(
         }
 
         item {
-            QuickActionsCard()
+            QuickActionsCard(onNavigate = onNavigate)
         }
 
         item {
@@ -147,7 +149,8 @@ fun HomeScreen(
 
 @Composable
 fun QuickActionsCard(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onNavigate: (String) -> Unit = {}
 ) {
     Card(
         modifier = modifier.fillMaxWidth(),
@@ -164,22 +167,22 @@ fun QuickActionsCard(
             QuickActionButton(
                 icon = Icons.Default.Add,
                 label = "添加资产",
-                onClick = { }
+                onClick = { onNavigate(Screen.AddAsset.route) }
             )
             QuickActionButton(
                 icon = Icons.Default.CreditCard,
                 label = "添加负债",
-                onClick = { }
+                onClick = { onNavigate(Screen.AddLiability.route) }
             )
             QuickActionButton(
                 icon = Icons.Default.Receipt,
                 label = "记录收支",
-                onClick = { }
+                onClick = { onNavigate(Screen.CashFlow.route) }
             )
             QuickActionButton(
                 icon = Icons.Default.TrendingUp,
                 label = "投资管理",
-                onClick = { }
+                onClick = { onNavigate(Screen.Investments.route) }
             )
         }
     }
